@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GPS Highway Restaurant | Authentic Indian Cuisine</title>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@400;500;600;700&family=EB+Garamond:wght@500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #1a1a1a;
@@ -16,9 +15,6 @@
             --accent-color: #e8e8e8;
             --text-light: #f8f8f8;
             --text-dark: #333333;
-            --text-secondary: rgba(255, 255, 255, 0.8);
-            --gold-light: #e6c88e;
-            --gold-dark: #b3895e;
         }
         
         * {
@@ -32,62 +28,11 @@
             color: var(--text-dark);
             background-color: #f9f9f9;
             overflow-x: hidden;
-            line-height: 1.6;
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
             font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-        
-        /* Loader Animation */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--primary-color);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s, visibility 0.5s;
-        }
-        
-        .loader-logo {
-            width: 150px;
-            height: 150px;
-            margin-bottom: 15px;
-            animation: pulse 1s ease-in-out;
-        }
-        
-        .loader-text {
-            color: var(--secondary-color);
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-top: 15px;
-            animation: fadeIn 0.5s ease-in-out;
-            font-family: 'Libre Baskerville', serif;
-            letter-spacing: 1px;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(0.95); opacity: 0; }
-            50% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(0.95); opacity: 0; }
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .loader-hidden {
-            opacity: 0;
-            visibility: hidden;
         }
         
         .container {
@@ -100,17 +45,16 @@
         header {
             background-color: var(--primary-color);
             color: var(--text-light);
-            padding: 15px 0;
+            padding: 20px 0;
             position: fixed;
             width: 100%;
             z-index: 1000;
             transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(193, 154, 107, 0.2);
         }
         
         header.scrolled {
-            padding: 8px 0;
-            background-color: rgba(26, 26, 26, 0.98);
+            padding: 10px 0;
+            background-color: rgba(26, 26, 26, 0.95);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         
@@ -126,20 +70,16 @@
         }
         
         .logo-img {
-            height: 45px;
-            width: 45px;
-            margin-right: 12px;
-            border-radius: 50%;
-            object-fit: cover;
+            height: 50px;
+            margin-right: 15px;
         }
         
         .logo {
-            font-size: 1.8rem;
+            font-size: 28px;
             font-weight: 700;
             color: var(--secondary-color);
             text-decoration: none;
-            font-family: 'Libre Baskerville', serif;
-            letter-spacing: 1px;
+            font-family: 'Playfair Display', serif;
         }
         
         nav ul {
@@ -148,18 +88,16 @@
         }
         
         nav ul li {
-            margin-left: 25px;
+            margin-left: 30px;
         }
         
         nav ul li a {
             color: var(--text-light);
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 16px;
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 0.5px;
         }
         
         nav ul li a:hover {
@@ -186,68 +124,56 @@
             background: none;
             border: none;
             color: var(--text-light);
-            font-size: 1.5rem;
+            font-size: 24px;
             cursor: pointer;
         }
         
-        /* Hero Section - Enhanced with new design */
-        #hero {
+        /* Hero Section */
+        .hero {
             height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
             display: flex;
             align-items: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            color: var(--text-light);
-            animation: fadeIn 1s ease-in-out;
-            font-family: 'EB Garamond', serif;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .hero-subtitle {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            color: var(--gold-light);
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-            animation: fadeIn 1.2s ease-in-out;
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 500;
-            font-style: italic;
-            letter-spacing: 1px;
-        }
-
-        .hero-btns {
-            display: flex;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            animation: fadeIn 1.5s ease-in-out;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 20px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 72px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .contact-banner {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        
+        .contact-banner a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 10px;
         }
         
         .btn {
             display: inline-block;
-            padding: 15px 35px;
+            padding: 12px 30px;
             background-color: var(--secondary-color);
             color: var(--text-light);
             text-decoration: none;
@@ -255,24 +181,17 @@
             font-weight: 500;
             transition: all 0.3s ease;
             border: 2px solid var(--secondary-color);
-            font-size: 1rem;
-            min-width: 180px;
-            text-align: center;
-            letter-spacing: 1px;
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
         }
         
         .btn:hover {
             background-color: transparent;
             color: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         
         .btn-outline {
             background-color: transparent;
             color: var(--secondary-color);
+            margin-left: 15px;
         }
         
         .btn-outline:hover {
@@ -292,7 +211,7 @@
         }
         
         .section-title h2 {
-            font-size: 3.2rem;
+            font-size: 42px;
             color: var(--primary-color);
             position: relative;
             display: inline-block;
@@ -321,7 +240,7 @@
         }
         
         .about-text h3 {
-            font-size: 2.2rem;
+            font-size: 32px;
             margin-bottom: 20px;
             color: var(--primary-color);
         }
@@ -329,8 +248,7 @@
         .about-text p {
             margin-bottom: 20px;
             line-height: 1.8;
-            font-size: 1.1rem;
-            color: var(--text-dark);
+            font-size: 16px;
         }
         
         .about-image {
@@ -342,11 +260,6 @@
             width: 100%;
             border-radius: 10px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .about-image:hover img {
-            transform: scale(1.02);
         }
         
         .about-image::before {
@@ -361,7 +274,7 @@
             z-index: -1;
         }
         
-        /* Menu Section with 4:5 ratio cards */
+        /* Menu Section */
         .menu {
             padding: 100px 0;
             background-color: #f5f5f5;
@@ -369,7 +282,7 @@
         
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
@@ -379,11 +292,7 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            aspect-ratio: 4/5;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .menu-item:hover {
@@ -393,50 +302,90 @@
         
         .menu-item img {
             width: 100%;
-            height: 60%;
+            height: 250px;
             object-fit: cover;
-            flex-shrink: 0;
         }
         
         .menu-item-content {
             padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
         }
         
         .menu-item-content h3 {
-            font-size: 1.5rem;
+            font-size: 22px;
             margin-bottom: 10px;
             color: var(--primary-color);
-            font-family: 'Cormorant Garamond', serif;
         }
         
         .menu-item-content p {
             color: #666;
             margin-bottom: 15px;
             line-height: 1.6;
-            flex-grow: 1;
-            font-size: 1rem;
         }
         
         .price {
-            font-size: 1.3rem;
+            font-size: 20px;
             font-weight: 700;
             color: var(--secondary-color);
-            margin-top: auto;
-            font-family: 'Cormorant Garamond', serif;
         }
         
-        .menu-btn-container {
-            text-align: center;
-            margin-top: 40px;
+        /* Full Menu Section */
+        .full-menu {
+            display: none;
+            padding: 50px 0;
+            background-color: #f5f5f5;
         }
         
-        /* Video Gallery - Card Style with 1:1 ratio */
+        .full-menu.active {
+            display: block;
+        }
+        
+        .menu-category {
+            margin-bottom: 50px;
+        }
+        
+        .menu-category h3 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .menu-items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .menu-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .menu-card h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .menu-card .price {
+            font-size: 18px;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        /* Video Gallery Section */
         .video-gallery {
             padding: 100px 0;
             background-color: var(--primary-color);
+            color: var(--text-light);
         }
         
         .video-container {
@@ -448,40 +397,22 @@
         
         .video-item {
             position: relative;
-            border-radius: 10px;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            background: white;
-            transition: all 0.3s ease;
-            aspect-ratio: 1/1;
+            border-radius: 10px;
         }
         
-        .video-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .video-item video {
+        .video-item iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            display: block;
-            border-bottom: 3px solid var(--secondary-color);
+            border: none;
         }
         
-        .video-caption {
-            padding: 20px;
-            text-align: center;
-            background: white;
-        }
-        
-        .video-caption h3 {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            font-family: 'Cormorant Garamond', serif;
-        }
-        
-        /* Reservation Section - Enhanced */
+        /* Reservation */
         .reservation {
             padding: 100px 0;
             background-color: var(--text-light);
@@ -491,31 +422,9 @@
             max-width: 700px;
             margin: 0 auto;
             background-color: #fff;
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .reservation-form h3 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: var(--primary-color);
-            position: relative;
-            padding-bottom: 15px;
-            font-family: 'Cormorant Garamond', serif;
-        }
-        
-        .reservation-form h3::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
         
         .form-group {
@@ -524,24 +433,20 @@
         
         .form-group label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 500;
-            font-size: 1rem;
-            color: var(--primary-color);
-            font-family: 'Montserrat', sans-serif;
         }
         
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 15px 20px;
+            padding: 12px 15px;
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 5px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background-color: #f9f9f9;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
         }
         
         .form-group input:focus,
@@ -549,20 +454,6 @@
         .form-group textarea:focus {
             border-color: var(--secondary-color);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(193, 154, 107, 0.2);
-        }
-        
-        .form-group select {
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 15px center;
-            background-size: 15px;
-        }
-        
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
         }
         
         .form-row {
@@ -574,50 +465,7 @@
             flex: 1;
         }
         
-        .submit-btn {
-            width: 100%;
-            padding: 18px;
-            background-color: var(--secondary-color);
-            color: var(--text-light);
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-            letter-spacing: 1px;
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-        }
-        
-        .submit-btn:hover {
-            background-color: var(--gold-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Map Section */
-        .map-section {
-            padding: 80px 0;
-            background-color: var(--text-light);
-        }
-        
-        .map-container {
-            margin-top: 30px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 500px;
-            border: 0;
-        }
-        
-        /* Footer with enhanced contact info */
+        /* Footer */
         footer {
             background-color: var(--primary-color);
             color: var(--text-light);
@@ -632,12 +480,11 @@
         }
         
         .footer-column h3 {
-            font-size: 1.5rem;
+            font-size: 22px;
             margin-bottom: 25px;
             color: var(--secondary-color);
             position: relative;
             padding-bottom: 10px;
-            font-family: 'Cormorant Garamond', serif;
         }
         
         .footer-column h3::after {
@@ -653,8 +500,6 @@
         .footer-column p {
             margin-bottom: 15px;
             line-height: 1.8;
-            color: var(--text-secondary);
-            font-size: 1rem;
         }
         
         .footer-column ul {
@@ -666,63 +511,18 @@
         }
         
         .footer-column ul li a {
-            color: var(--text-secondary);
+            color: var(--text-light);
             text-decoration: none;
             transition: color 0.3s ease;
-            font-size: 1rem;
         }
         
         .footer-column ul li a:hover {
             color: var(--secondary-color);
         }
         
-        .contact-info {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-        
-        .contact-info i {
-            margin-right: 10px;
-            color: var(--secondary-color);
-            width: 18px;
-            text-align: center;
-            margin-top: 3px;
-            font-size: 1.1rem;
-        }
-        
-        .contact-info a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 1rem;
-        }
-        
-        .contact-info a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .phone-numbers {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 5px;
-        }
-        
-        .phone-number {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: var(--text-light);
-            text-decoration: none;
-            display: inline-block;
-        }
-        
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
         }
         
         .social-links a {
@@ -735,12 +535,23 @@
             border-radius: 50%;
             color: var(--text-light);
             transition: all 0.3s ease;
-            font-size: 1.1rem;
         }
         
         .social-links a:hover {
             background-color: var(--secondary-color);
             transform: translateY(-3px);
+        }
+        
+        .map-container {
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
         }
         
         .footer-bottom {
@@ -749,203 +560,26 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .footer-bottom p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* Chatbot Styles */
-        .chatbot-container {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 999;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .chatbot-toggle {
-            width: 60px;
-            height: 60px;
-            background-color: var(--secondary-color);
-            border-radius: 50%;
+        .quick-links {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            border: none;
-        }
-
-        .chatbot-toggle:hover {
-            transform: scale(1.1);
-            background-color: var(--gold-dark);
-        }
-
-        .chatbot-window {
-            width: 350px;
-            height: 500px;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            display: none;
             flex-direction: column;
-            transform: translateY(20px);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .chatbot-window.active {
-            display: flex;
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .chatbot-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .chatbot-header h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 0;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .chatbot-close {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-
-        .chatbot-messages {
-            flex: 1;
-            padding: 20px;
-            overflow-y: auto;
-            background-color: #f9f9f9;
-        }
-
-        .message {
-            margin-bottom: 15px;
-            max-width: 80%;
-            padding: 10px 15px;
-            border-radius: 18px;
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-
-        .bot-message {
-            background-color: #e8e8e8;
-            color: #333;
-            border-top-left-radius: 5px;
-            align-self: flex-start;
-        }
-
-        .user-message {
-            background-color: var(--secondary-color);
-            color: white;
-            border-top-right-radius: 5px;
-            margin-left: auto;
-        }
-
-        .chatbot-input {
-            display: flex;
-            padding: 15px;
-            background-color: white;
-            border-top: 1px solid #eee;
-        }
-
-        .chatbot-input input {
-            flex: 1;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 30px;
-            outline: none;
-            font-size: 0.9rem;
-        }
-
-        .chatbot-input button {
-            background-color: var(--secondary-color);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            margin-left: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .chatbot-input button:hover {
-            background-color: var(--gold-dark);
-        }
-
-        .quick-replies {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .quick-reply {
-            background-color: rgba(193, 154, 107, 0.2);
-            color: var(--primary-color);
-            border: none;
-            border-radius: 15px;
-            padding: 5px 12px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .quick-reply:hover {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-
-        .menu-suggestion {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: rgba(193, 154, 107, 0.1);
-            border-radius: 8px;
-            border-left: 3px solid var(--secondary-color);
-        }
-
-        .menu-suggestion h4 {
-            margin-bottom: 5px;
-            color: var(--primary-color);
-            font-size: 0.9rem;
-        }
-
-        .menu-suggestion p {
-            font-size: 0.8rem;
-            color: #666;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .hero-title {
-                font-size: 4rem;
-            }
         }
         
+        .quick-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .quick-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Responsive Styles */
         @media (max-width: 992px) {
-            .hero-title {
-                font-size: 3.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.5rem;
+            .hero h1 {
+                font-size: 60px;
             }
             
             .about-content {
@@ -954,40 +588,24 @@
             
             .about-image {
                 margin-top: 40px;
-                max-width: 600px;
-                margin-left: auto;
-                margin-right: auto;
             }
             
             .about-image::before {
                 display: none;
             }
-            
-            .map-container iframe {
-                height: 400px;
-            }
         }
         
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.8rem;
+            .hero h1 {
+                font-size: 48px;
             }
             
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2.5rem;
+            .hero p {
+                font-size: 18px;
             }
             
             .btn {
-                padding: 12px 25px;
-                font-size: 0.9rem;
-            }
-            
-            .hero-btns {
-                gap: 15px;
+                padding: 10px 25px;
             }
             
             nav ul {
@@ -999,8 +617,7 @@
                 background-color: var(--primary-color);
                 flex-direction: column;
                 align-items: center;
-                justify-content: flex-start;
-                padding-top: 40px;
+                justify-content: center;
                 transition: all 0.5s ease;
             }
             
@@ -1020,32 +637,15 @@
                 flex-direction: column;
                 gap: 0;
             }
-            
-            .reservation-form {
-                padding: 30px;
-            }
-            
-            .map-container iframe {
-                height: 350px;
-            }
-
-            .chatbot-window {
-                width: 300px;
-                height: 450px;
-            }
         }
         
         @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2.2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1rem;
+            .hero h1 {
+                font-size: 36px;
             }
             
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 32px;
             }
             
             .menu-grid {
@@ -1053,67 +653,41 @@
             }
             
             .reservation-form {
-                padding: 25px 20px;
+                padding: 30px 20px;
             }
             
             .logo-img {
                 height: 40px;
-                width: 40px;
                 margin-right: 10px;
             }
             
             .logo {
-                font-size: 1.3rem;
+                font-size: 22px;
             }
             
-            .map-container iframe {
-                height: 300px;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            .chatbot-container {
-                bottom: 20px;
-                right: 20px;
-            }
-
-            .chatbot-toggle {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-            }
-
-            .chatbot-window {
-                width: 280px;
-                right: 0;
+            .contact-banner {
+                font-size: 14px;
+                padding: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Loader Animation -->
-    <div class="loader" id="loader">
-        <img src="https://media-hosting.imagekit.io/55598457fb264896/403923188_655152343462104_4618773726312330113_n.jpg?Expires=1841954441&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=dxts~jCXOor4vu3SLzcluPfBN9SJBbSiwL4qVWGIQLTP2fBQ3dl0dsAmPGsdx71h-RN0FybaTNwvBRkd4n3JFRR3XMRJkAXW0tERkLkQfuLfLm2B-TD7wVTJnSdiH4T6OvTfokGhcAzaKFPdiWMHug9L10jE4iHwgr930RzFIYzsFiQ9z9jNxCYxdMBx8Xix9xjG7uKwyACCBvQgxfIAhiGXXvttc3CRHrbFt9Jk-J9or4CEtxnKVVYQ1yd19aOs4WbN0T7e76N-~V7jjQ7NtXTKwQnl92peercTUr7tUhvIpixysgKrgT-kVzbRBTNrZsid-bNPcG2vLBqGeE8mhw__" alt="GPS Highway Restaurant Logo" class="loader-logo">
-        <div class="loader-text">Welcomes You</div>
-    </div>
-
     <!-- Header -->
     <header id="header">
         <div class="container header-container">
             <div class="logo-container">
                 <img src="https://media-hosting.imagekit.io/55598457fb264896/403923188_655152343462104_4618773726312330113_n.jpg?Expires=1841954441&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=dxts~jCXOor4vu3SLzcluPfBN9SJBbSiwL4qVWGIQLTP2fBQ3dl0dsAmPGsdx71h-RN0FybaTNwvBRkd4n3JFRR3XMRJkAXW0tERkLkQfuLfLm2B-TD7wVTJnSdiH4T6OvTfokGhcAzaKFPdiWMHug9L10jE4iHwgr930RzFIYzsFiQ9z9jNxCYxdMBx8Xix9xjG7uKwyACCBvQgxfIAhiGXXvttc3CRHrbFt9Jk-J9or4CEtxnKVVYQ1yd19aOs4WbN0T7e76N-~V7jjQ7NtXTKwQnl92peercTUr7tUhvIpixysgKrgT-kVzbRBTNrZsid-bNPcG2vLBqGeE8mhw__" alt="GPS Highway Restaurant Logo" class="logo-img">
-                <a href="index.html" class="logo">GPS Highway Restaurant</a>
+                <a href="#" class="logo">GPS Highway Restaurant</a>
             </div>
             <nav>
                 <ul id="nav-menu">
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="index.html#gallery">Gallery</a></li>
-                    <li><a href="index.html#reservation">Reservations</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#reservation">Reservations</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <button class="mobile-menu-btn" id="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
@@ -1122,13 +696,13 @@
         </div>
     </header>
 
-    <!-- Hero Section - Enhanced -->
-    <section id="hero">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
         <div class="hero-content">
-            <h1 class="hero-title">Authentic Indian Cuisine</h1>
-            <p class="hero-subtitle">Experience the rich flavors of India with our carefully crafted menu featuring traditional recipes and the freshest ingredients.</p>
-            <div class="hero-btns">
-                <a href="menu.html" class="btn">View Menu</a>
+            <h1>Authentic Indian Cuisine</h1>
+            <p>Experience the rich flavors of India with our carefully crafted menu featuring traditional recipes and the freshest ingredients.</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn">View Menu</a>
                 <a href="#reservation" class="btn btn-outline">Reserve a Table</a>
             </div>
         </div>
@@ -1148,13 +722,13 @@
                     <p>Our welcoming dining space provides the perfect setting for an unforgettable dining experience, whether you're stopping by during your travels or enjoying a meal with family and friends.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Restaurant Interior" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Restaurant Interior">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Menu Section with 4:5 ratio cards -->
+    <!-- Menu Section -->
     <section class="menu" id="menu">
         <div class="container">
             <div class="section-title">
@@ -1163,7 +737,7 @@
             <div class="menu-grid">
                 <!-- Appetizers -->
                 <div class="menu-item">
-                    <img src="https://i.pinimg.com/736x/77/1e/b4/771eb4b06b966c164be868685bfd5c85.jpg" alt="Paneer Tikka" loading="lazy">
+                    <img src="https://media-hosting.imagekit.io/8b731b1f45c04a22/GPS%20highway%20.mp4?Expires=1841954573&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=I8yFkimpPX4ypv6LsiALuV2LwLD-zbRqHS3e~S44khNEmAzQxLITRuZGC4oFJ2BLb3BQrcRCPKrMhfW7auUW4PaGhuz13q8XuO-z2BBth-tV6Q-XFIZE4efdQxbeJQKOl0AJmf1kGzbnXKW52onefQpJiV6B-AgpZG~eWgVCa~Wnr9J-cVjM6y5r-pG-4s14inLRV3wTeBVKE0xQNPzC2WE99emhBd5o92OtWtHkp1AME989fJggPzz2RtkAsOOvBVFDom3zY161nIdlNobywgL9ZKPmfXXMMdQy9IOWIHhZJdkxNSEGKfukor~0Jlpti0ewFZaGhDlnFFKLNKRaOA__" alt="Paneer Tikka">
                     <div class="menu-item-content">
                         <h3>Paneer Tikka</h3>
                         <p>Marinated cottage cheese grilled to perfection in tandoor with spices</p>
@@ -1173,7 +747,7 @@
                 
                 <!-- Main Courses -->
                 <div class="menu-item">
-                    <img src="https://i.pinimg.com/736x/a8/9a/9f/a89a9f222ff5f325895f8053e8bbc5b0.jpg" alt="Butter Chicken" loading="lazy">
+                    <img src="https://media-hosting.imagekit.io/7c2145ad8da34a28/h2.mp4?Expires=1841954846&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Or2A~xzoM3I-TSAIaW7lvIZsROx-CEpg8nJY3x59IsAdsDXPU3LcNRIAekU2dOVY7iwHWYv4J3d2GH45cUQ8kVkqpS2tC7Ypi1-6VvM1RpNeq4DmiCEcSvzGb-xm8mGksi4rvaHpfTzf1x93UdVgYID4sxg1gFxoW9i2KpIYuZT35BpzzJFtcSmSTbbXzYnMcEWiUz7V0mYe5x02NkcommfzCptDQ7LB5HjEu~og0EN-1gVzh4OWOa1xKOSkkPBQ8xfeXAl6MwaFP8mP0tKPPadK~ooU~hrzYhrXgM3C0OXTZWpzc4Bq2vqCBh9g8dPNSggpnEOYZSRS3GkNb8sdRA__" alt="Butter Chicken">
                     <div class="menu-item-content">
                         <h3>Butter Chicken</h3>
                         <p>Tender chicken in a rich, creamy tomato gravy with aromatic spices</p>
@@ -1183,7 +757,7 @@
                 
                 <!-- Desserts -->
                 <div class="menu-item">
-                    <img src="https://i.pinimg.com/736x/9c/64/1f/9c641f34a51c3d39c254f34acfb25011.jpg" alt="Gulab Jamun" loading="lazy">
+                    <img src="https://media-hosting.imagekit.io/a3ec1257e5964342/h3.mp4?Expires=1841954846&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Q32MlLqENXE0kyP56SJJFfEo4zaPz6bTCYpxcy91jTnsmEmLGZ1T-BGuh32Af5yV0EhmNiOm8CjUVNGCilz2kFpvQeh-gBny8~7WD32fRjZUdIVVuAR0djyjhFsmVOJsF~a~SQ5SadyqGsJLTlD0dVxIcRAjg0De6tjGWE~lFxmD4yAPWBZ8hHHn8JeiNOJ4BknH9pXZwuzzCziRDbjEebORJYhaC9Xyn55XLCR3fH1iwBrDlkWgK4lDcwJZ5nwIVQ7Wk6gG-C9bCdO9kbwGmBxy6mJLIzLCk3Jen~olhh33TWPydKjvC0jxJkr4773oiKwrV7dCB6X-V9hGb38a4g__" alt="Gulab Jamun">
                     <div class="menu-item-content">
                         <h3>Gulab Jamun</h3>
                         <p>Soft, melt-in-your-mouth milk balls soaked in sugar syrup</p>
@@ -1191,78 +765,552 @@
                     </div>
                 </div>
             </div>
-            <div class="menu-btn-container">
-                <a href="menu.html" class="btn">View Full Menu</a>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#full-menu" class="btn" id="view-full-menu">View Full Menu</a>
             </div>
         </div>
     </section>
 
-    <!-- Video Gallery Section - Card Style with 1:1 ratio -->
+    <!-- Full Menu Section (hidden initially) -->
+    <section class="full-menu" id="full-menu">
+        <div class="container">
+            <div class="menu-category">
+                <h3>Veg Tandoor Starters</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <h4>Paneer Lahori Tikka</h4>
+                        <div class="price">₹390</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Tikka</h4>
+                        <div class="price">₹290</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Malai Tikka</h4>
+                        <div class="price">₹390</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Afgani Tikka</h4>
+                        <div class="price">₹320</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Achari Tikka</h4>
+                        <div class="price">₹290</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Mastana Tikka</h4>
+                        <div class="price">₹290</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Garlic Tikka</h4>
+                        <div class="price">₹300</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Sheekh Kabab</h4>
+                        <div class="price">₹320</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Tandoori Mushroom</h4>
+                        <div class="price">₹320</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Veg Sheekh Kabab</h4>
+                        <div class="price">₹290</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Veg Rimzim Kabab</h4>
+                        <div class="price">₹310</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Veg Kangada Kabab</h4>
+                        <div class="price">₹310</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Lajawab</h4>
+                        <div class="price">₹420</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Pahadi Kabab</h4>
+                        <div class="price">₹400</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Main Course - Veg</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <h4>Malai Kofta</h4>
+                        <div class="price">₹300</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Veg Kofta Curry</h4>
+                        <div class="price">₹280</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Veg Egg Curry</h4>
+                        <div class="price">₹280</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Methi Mutter Masala</h4>
+                        <div class="price">₹280</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Ki Bahar</h4>
+                        <div class="price">₹330</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Takatak</h4>
+                        <div class="price">₹330</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Palak Paneer</h4>
+                        <div class="price">₹320</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Butter Masala</h4>
+                        <div class="price">₹320</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Tikka Masala</h4>
+                        <div class="price">₹330</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Mysoori</h4>
+                        <div class="price">₹310</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Masala</h4>
+                        <div class="price">₹310</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Saoji</h4>
+                        <div class="price">₹310</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Lacchedar</h4>
+                        <div class="price">₹320</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Kadai</h4>
+                        <div class="price">₹320</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Patiyala</h4>
+                        <div class="price">₹330</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Kolhapuri</h4>
+                        <div class="price">₹310</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Dal</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <h4>Dal Fry</h4>
+                        <div class="price">₹190</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Butter Dal Fry</h4>
+                        <div class="price">₹200</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Dal Tadka</h4>
+                        <div class="price">₹190</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Dal Kolhapuri</h4>
+                        <div class="price">₹200</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Jeera Dal</h4>
+                        <div class="price">₹170</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Dal Snaks</h4>
+                        <div class="price">₹220</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Non-Veg Main Course</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <h4>Chicken Tikka Masala (Full)</h4>
+                        <div class="price">₹900</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Chicken Rara Masala (Full)</h4>
+                        <div class="price">₹900</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Chicken Masala (Full)</h4>
+                        <div class="price">₹850</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Chicken Curry (Full)</h4>
+                        <div class="price">₹850</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Butter Chicken (Full)</h4>
+                        <div class="price">₹890</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Dhaba Chicken (Full)</h4>
+                        <div class="price">₹850</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Mysoori Chicken (Full)</h4>
+                        <div class="price">₹850</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Kadai Chicken (Full)</h4>
+                        <div class="price">₹850</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Chicken Patiyala (Full)</h4>
+                        <div class="price">₹850</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>GPS Style Chicken Saoji (Full)</h4>
+                        <div class="price">₹850</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Mutton Shahi Korma (Full)</h4>
+                        <div class="price">₹990</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Mutton Curry (Full)</h4>
+                        <div class="price">₹990</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Mutton Rogan Josh (Full)</h4>
+                        <div class="price">₹990</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>GPS Style Mutton Saoji (Full)</h4>
+                        <div class="price">₹990</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Bhuna Chicken (Full)</h4>
+                        <div class="price">₹850</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Bhuna Mutton (Full)</h4>
+                        <div class="price">₹990</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Mutton Rara Masala (Full)</h4>
+                        <div class="price">₹990</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Chinese Veg Starter</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <h4>Paneer 65</h4>
+                        <div class="price">₹340</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Chilli Paneer</h4>
+                        <div class="price">₹340</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Crunchy Paneer</h4>
+                        <div class="price">₹350</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Corn Cheese Ball</h4>
+                        <div class="price">₹370</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Veg Crispy</h4>
+                        <div class="price">₹310</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Veg Manchurian Ball</h4>
+                        <div class="price">₹310</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Beverages</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <h4>Mineral Water</h4>
+                        <div class="price">₹30</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Soft Drink (250ml)</h4>
+                        <div class="price">₹40</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Soda</h4>
+                        <div class="price">₹40</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Fresh Lime Soda</h4>
+                        <div class="price">₹80</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Virgin Mojito</h4>
+                        <div class="price">₹90</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Soup</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <h4>Veg Sweet Corn Soup</h4>
+                        <div class="price">₹140</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Non-Veg Sweet Corn Soup</h4>
+                        <div class="price">₹170</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Veg Manchow Soup</h4>
+                        <div class="price">₹140</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Non-Veg Manchow Soup</h4>
+                        <div class="price">₹170</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Veg Hot and Sour Soup</h4>
+                        <div class="price">₹140</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Non-Veg Hot and Sour Soup</h4>
+                        <div class="price">₹170</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Veg Clear Soup</h4>
+                        <div class="price">₹140</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Non-Veg Clear Soup</h4>
+                        <div class="price">₹170</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Salad and Papad</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <h4>Roasted Papad</h4>
+                        <div class="price">₹25</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Fry Papad</h4>
+                        <div class="price">₹30</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Masala Papad</h4>
+                        <div class="price">₹50</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Green Salad</h4>
+                        <div class="price">₹90</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Curd Salad</h4>
+                        <div class="price">₹150</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>French Fries</h4>
+                        <div class="price">₹230</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Paneer Pakoda</h4>
+                        <div class="price">₹290</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Veg Raita</h4>
+                        <div class="price">₹130</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Breads Basket</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <h4>Tandoori Roti</h4>
+                        <div class="price">₹20</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Butter Tandoori Roti</h4>
+                        <div class="price">₹25</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Plain Naan</h4>
+                        <div class="price">₹50</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Butter Naan</h4>
+                        <div class="price">₹60</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Garlic Naan</h4>
+                        <div class="price">₹70</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Laccha Paratha</h4>
+                        <div class="price">₹50</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Plain Kulcha</h4>
+                        <div class="price">₹60</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Stuff Kulcha</h4>
+                        <div class="price">₹90</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Masala Garlic Roti</h4>
+                        <div class="price">₹60</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Cheese Roti</h4>
+                        <div class="price">₹70</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Cheese Garlic Naan</h4>
+                        <div class="price">₹80</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Rice</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <h4>Steam Rice</h4>
+                        <div class="price">₹140</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Jeera Rice</h4>
+                        <div class="price">₹150</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Garlic Jeera Rice</h4>
+                        <div class="price">₹180</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Veg Pulao</h4>
+                        <div class="price">₹250</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Veg Biryani</h4>
+                        <div class="price">₹260</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Chicken Biryani</h4>
+                        <div class="price">₹300</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Mutton Biryani</h4>
+                        <div class="price">₹350</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Egg Biryani</h4>
+                        <div class="price">₹240</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>PNR Biryani</h4>
+                        <div class="price">₹290</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Butter Dal Khichdi</h4>
+                        <div class="price">₹260</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Dessert/Ice Cream</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <h4>Vanilla Ice Cream</h4>
+                        <div class="price">₹90</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Butter Scotch Ice Cream</h4>
+                        <div class="price">₹110</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Chocolate Sauce</h4>
+                        <div class="price">₹90</div>
+                    </div>
+                    <div class="menu-card">
+                        <h4>Gulab Jamun</h4>
+                        <div class="price">₹60</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery Section -->
     <section class="video-gallery" id="gallery">
         <div class="container">
             <div class="section-title">
-                <h2 style="color: var(--text-light);">Our Restaurant</h2>
+                <h2>Our Restaurant</h2>
             </div>
             <div class="video-container">
                 <div class="video-item">
-                    <video controls preload="none" poster="https://media-hosting.imagekit.io/55598457fb264896/403923188_655152343462104_4618773726312330113_n.jpg?Expires=1841954441&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=dxts~jCXOor4vu3SLzcluPfBN9SJBbSiwL4qVWGIQLTP2fBQ3dl0dsAmPGsdx71h-RN0FybaTNwvBRkd4n3JFRR3XMRJkAXW0tERkLkQfuLfLm2B-TD7wVTJnSdiH4T6OvTfokGhcAzaKFPdiWMHug9L10jE4iHwgr930RzFIYzsFiQ9z9jNxCYxdMBx8Xix9xjG7uKwyACCBvQgxfIAhiGXXvttc3CRHrbFt9Jk-J9or4CEtxnKVVYQ1yd19aOs4WbN0T7e76N-~V7jjQ7NtXTKwQnl92peercTUr7tUhvIpixysgKrgT-kVzbRBTNrZsid-bNPcG2vLBqGeE8mhw__">
-                        <source src="https://media-hosting.imagekit.io/8b731b1f45c04a22/GPS%20highway%20.mp4?Expires=1841954573&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=I8yFkimpPX4ypv6LsiALuV2LwLD-zbRqHS3e~S44khNEmAzQxLITRuZGC4oFJ2BLb3BQrcRCPKrMhfW7auUW4PaGhuz13q8XuO-z2BBth-tV6Q-XFIZE4efdQxbeJQKOl0AJmf1kGzbnXKW52onefQpJiV6B-AgpZG~eWgVCa~Wnr9J-cVjM6y5r-pG-4s14inLRV3wTeBVKE0xQNPzC2WE99emhBd5o92OtWtHkp1AME989fJggPzz2RtkAsOOvBVFDom3zY161nIdlNobywgL9ZKPmfXXMMdQy9IOWIHhZJdkxNSEGKfukor~0Jlpti0ewFZaGhDlnFFKLNKRaOA__" type="video/mp4">
-                    </video>
-                    <div class="video-caption">
-                        <h3>Restaurant Ambience</h3>
-                    </div>
+                    <iframe src="https://media-hosting.imagekit.io/8b731b1f45c04a22/GPS%20highway%20.mp4?Expires=1841954573&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=I8yFkimpPX4ypv6LsiALuV2LwLD-zbRqHS3e~S44khNEmAzQxLITRuZGC4oFJ2BLb3BQrcRCPKrMhfW7auUW4PaGhuz13q8XuO-z2BBth-tV6Q-XFIZE4efdQxbeJQKOl0AJmf1kGzbnXKW52onefQpJiV6B-AgpZG~eWgVCa~Wnr9J-cVjM6y5r-pG-4s14inLRV3wTeBVKE0xQNPzC2WE99emhBd5o92OtWtHkp1AME989fJggPzz2RtkAsOOvBVFDom3zY161nIdlNobywgL9ZKPmfXXMMdQy9IOWIHhZJdkxNSEGKfukor~0Jlpti0ewFZaGhDlnFFKLNKRaOA__" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div class="video-item">
-                    <video controls preload="none" poster="https://media-hosting.imagekit.io/55598457fb264896/403923188_655152343462104_4618773726312330113_n.jpg?Expires=1841954441&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=dxts~jCXOor4vu3SLzcluPfBN9SJBbSiwL4qVWGIQLTP2fBQ3dl0dsAmPGsdx71h-RN0FybaTNwvBRkd4n3JFRR3XMRJkAXW0tERkLkQfuLfLm2B-TD7wVTJnSdiH4T6OvTfokGhcAzaKFPdiWMHug9L10jE4iHwgr930RzFIYzsFiQ9z9jNxCYxdMBx8Xix9xjG7uKwyACCBvQgxfIAhiGXXvttc3CRHrbFt9Jk-J9or4CEtxnKVVYQ1yd19aOs4WbN0T7e76N-~V7jjQ7NtXTKwQnl92peercTUr7tUhvIpixysgKrgT-kVzbRBTNrZsid-bNPcG2vLBqGeE8mhw__">
-                        <source src="https://media-hosting.imagekit.io/a3ec1257e5964342/h3.mp4?Expires=1841954846&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Q32MlLqENXE0kyP56SJJFfEo4zaPz6bTCYpxcy91jTnsmEmLGZ1T-BGuh32Af5yV0EhmNiOm8CjUVNGCilz2kFpvQeh-gBny8~7WD32fRjZUdIVVuAR0djyjhFsmVOJsF~a~SQ5SadyqGsJLTlD0dVxIcRAjg0De6tjGWE~lFxmD4yAPWBZ8hHHn8JeiNOJ4BknH9pXZwuzzCziRDbjEebORJYhaC9Xyn55XLCR3fH1iwBrDlkWgK4lDcwJZ5nwIVQ7Wk6gG-C9bCdO9kbwGmBxy6mJLIzLCk3Jen~olhh33TWPydKjvC0jxJkr4773oiKwrV7dCB6X-V9hGb38a4g__" type="video/mp4">
-                    </video>
-                    <div class="video-caption">
-                        <h3>Food Preparation</h3>
-                    </div>
+                    <iframe src="https://media-hosting.imagekit.io/7c2145ad8da34a28/h2.mp4?Expires=1841954846&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Or2A~xzoM3I-TSAIaW7lvIZsROx-CEpg8nJY3x59IsAdsDXPU3LcNRIAekU2dOVY7iwHWYv4J3d2GH45cUQ8kVkqpS2tC7Ypi1-6VvM1RpNeq4DmiCEcSvzGb-xm8mGksi4rvaHpfTzf1x93UdVgYID4sxg1gFxoW9i2KpIYuZT35BpzzJFtcSmSTbbXzYnMcEWiUz7V0mYe5x02NkcommfzCptDQ7LB5HjEu~og0EN-1gVzh4OWOa1xKOSkkPBQ8xfeXAl6MwaFP8mP0tKPPadK~ooU~hrzYhrXgM3C0OXTZWpzc4Bq2vqCBh9g8dPNSggpnEOYZSRS3GkNb8sdRA__" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div class="video-item">
-                    <video controls preload="none" poster="https://media-hosting.imagekit.io/55598457fb264896/403923188_655152343462104_4618773726312330113_n.jpg?Expires=1841954441&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=dxts~jCXOor4vu3SLzcluPfBN9SJBbSiwL4qVWGIQLTP2fBQ3dl0dsAmPGsdx71h-RN0FybaTNwvBRkd4n3JFRR3XMRJkAXW0tERkLkQfuLfLm2B-TD7wVTJnSdiH4T6OvTfokGhcAzaKFPdiWMHug9L10jE4iHwgr930RzFIYzsFiQ9z9jNxCYxdMBx8Xix9xjG7uKwyACCBvQgxfIAhiGXXvttc3CRHrbFt9Jk-J9or4CEtxnKVVYQ1yd19aOs4WbN0T7e76N-~V7jjQ7NtXTKwQnl92peercTUr7tUhvIpixysgKrgT-kVzbRBTNrZsid-bNPcG2vLBqGeE8mhw__">
-                        <source src="https://media-hosting.imagekit.io/7c2145ad8da34a28/h2.mp4?Expires=1841954846&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Or2A~xzoM3I-TSAIaW7lvIZsROx-CEpg8nJY3x59IsAdsDXPU3LcNRIAekU2dOVY7iwHWYv4J3d2GH45cUQ8kVkqpS2tC7Ypi1-6VvM1RpNeq4DmiCEcSvzGb-xm8mGksi4rvaHpfTzf1x93UdVgYID4sxg1gFxoW9i2KpIYuZT35BpzzJFtcSmSTbbXzYnMcEWiUz7V0mYe5x02NkcommfzCptDQ7LB5HjEu~og0EN-1gVzh4OWOa1xKOSkkPBQ8xfeXAl6MwaFP8mP0tKPPadK~ooU~hrzYhrXgM3C0OXTZWpzc4Bq2vqCBh9g8dPNSggpnEOYZSRS3GkNb8sdRA__" type="video/mp4">
-                    </video>
-                    <div class="video-caption">
-                        <h3>Customer Experience</h3>
-                    </div>
+                    <iframe src="https://media-hosting.imagekit.io/a3ec1257e5964342/h3.mp4?Expires=1841954846&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Q32MlLqENXE0kyP56SJJFfEo4zaPz6bTCYpxcy91jTnsmEmLGZ1T-BGuh32Af5yV0EhmNiOm8CjUVNGCilz2kFpvQeh-gBny8~7WD32fRjZUdIVVuAR0djyjhFsmVOJsF~a~SQ5SadyqGsJLTlD0dVxIcRAjg0De6tjGWE~lFxmD4yAPWBZ8hHHn8JeiNOJ4BknH9pXZwuzzCziRDbjEebORJYhaC9Xyn55XLCR3fH1iwBrDlkWgK4lDcwJZ5nwIVQ7Wk6gG-C9bCdO9kbwGmBxy6mJLIzLCk3Jen~olhh33TWPydKjvC0jxJkr4773oiKwrV7dCB6X-V9hGb38a4g__" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://media-hosting.imagekit.io/3888fa269b104e21/h4.mp4?Expires=1841954846&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=QLBaPorxq~2r5kksUvIxlFKOj1vBV-Z6lfQSnywdd7J-OtnmzZFKx7wy0qL~ZYyzOnqF~R8~0AmZIbvrm7NApTYck7DKdWEZD96iqt47vnpENiwByMoo57kKRbz3KJ0bW8mPjLRhveBWuCie9HHMkIUilCvR79DfUdNDfcB9FJafs6KMu9XZGBsXwxlScDHp1efbyi0-66cKWoYyXDsmE0tRfahNqq0r1ReY50-2CSTkNIw-4zy~uS37fBp2FOpShMAHO1Txyr7wS9vZ-TP4HSWehiLKcWR1BurHUVKHhct1RU2zxt90huBs6SSMuxVTzXrSkbO4C2q~hx4E0lKUig__" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Reservation Section - Enhanced -->
+    <!-- Reservation Section -->
     <section class="reservation" id="reservation">
         <div class="container">
             <div class="section-title">
                 <h2>Make a Reservation</h2>
             </div>
             <div class="reservation-form">
-                <form action="https://api.web3forms.com/submit" method="POST" id="booking-form">
-                    <input type="hidden" name="access_key" value="3ad2ac7d-5205-4c7f-b856-de35b9a592f3">
-                    <input type="hidden" name="subject" value="New Reservation Request">
-                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
+                <form id="booking-form">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                            <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                            <input type="email" id="email" name="email" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                            <input type="tel" id="phone" name="phone" required>
                         </div>
                         <div class="form-group">
                             <label for="guests">Number of Guests</label>
                             <select id="guests" name="guests" required>
-                                <option value="" disabled selected>Select guests</option>
                                 <option value="1">1 Person</option>
                                 <option value="2">2 People</option>
                                 <option value="3">3 People</option>
@@ -1275,31 +1323,19 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="date">Date</label>
-                            <input type="date" id="date" name="date" placeholder="dd-mm-yyyy" required>
+                            <input type="date" id="date" name="date" required>
                         </div>
                         <div class="form-group">
                             <label for="time">Time</label>
-                            <input type="time" id="time" name="time" placeholder="--:--" required>
+                            <input type="time" id="time" name="time" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="special-requests">Special Requests</label>
-                        <textarea id="special-requests" name="special-requests" rows="4" placeholder="Any special requests or dietary restrictions..."></textarea>
+                        <textarea id="special-requests" name="special-requests" rows="4"></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">Book Table</button>
+                    <button type="submit" class="btn" style="width: 100%;">Book Table</button>
                 </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <section class="map-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Location</h2>
-            </div>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52356.72936253133!2d78.9818823486328!3d21.066862200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e1!3m2!1sen!2sin!4v1747341109593!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -1317,32 +1353,24 @@
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <a href="https://maps.google.com/?q=GPS+Highway+Restaurant,+Chichbhawan,+Nagpur,+Maharashtra+440005" target="_blank">GPS Highway Restaurant, Chichbhawan, Nagpur, Maharashtra 440005</a>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-phone"></i>
-                        <div class="phone-numbers">
-                            <span class="phone-number">9021078335</span>
-                            <span class="phone-number">9665615666</span>
-                        </div>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:info@gpshighwayrestaurant.com">info@gpshighwayrestaurant.com</a>
+                    <h3>Quick Links</h3>
+                    <div class="quick-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About Us</a>
+                        <a href="#menu">Our Menu</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#reservation">Reservations</a>
+                        <a href="#contact">Contact Us</a>
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html#home">Home</a></li>
-                        <li><a href="index.html#about">About Us</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="index.html#gallery">Gallery</a></li>
-                        <li><a href="index.html#reservation">Reservations</a></li>
-                    </ul>
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/place/GPS+Highway+Restaurant/@21.0668622,78.9818823,15z/data=!4m6!3m5!1s0x3bd4bfece213e8df:0xbafc5c14f7962ecd!8m2!3d21.0668622!4d78.9818823!16s%2Fg%2F11q5q9q9q9?entry=ttu" target="_blank">123 Gourmet Avenue, Culinary District</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:9021078335">9021078335</a>, <a href="tel:9665615666">9665615666</a>, <a href="tel:8600360818">8600360818</a></p>
+                    <p><i class="fas fa-envelope"></i> info@gpshighwayrestaurant.com</p>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52356.72936253133!2d78.9818823486328!3d21.066862200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e1!3m2!1sen!2sin!4v1747341109593!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
                 <div class="footer-column">
                     <h3>Opening Hours</h3>
@@ -1355,67 +1383,7 @@
         </div>
     </footer>
 
-    <!-- Chatbot Container -->
-    <div class="chatbot-container">
-        <button class="chatbot-toggle" id="chatbot-toggle">
-            <i class="fas fa-comments"></i>
-        </button>
-        <div class="chatbot-window" id="chatbot-window">
-            <div class="chatbot-header">
-                <h3>GPS Highway Assistant</h3>
-                <button class="chatbot-close" id="chatbot-close">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="chatbot-messages" id="chatbot-messages">
-                <div class="message bot-message">
-                    Welcome to GPS Highway Restaurant! How can I assist you today? 😊
-                    <div class="quick-replies">
-                        <button class="quick-reply" data-message="Reserve a table">Reserve a table</button>
-                        <button class="quick-reply" data-message="View menu">View menu</button>
-                        <button class="quick-reply" data-message="Contact info">Contact info</button>
-                    </div>
-                </div>
-            </div>
-            <div class="chatbot-input">
-                <input type="text" id="chatbot-input" placeholder="Type your message...">
-                <button id="chatbot-send"><i class="fas fa-paper-plane"></i></button>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Loader Animation
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                const loader = document.getElementById('loader');
-                loader.classList.add('loader-hidden');
-                
-                // Enable scrolling after loader disappears
-                document.body.style.overflow = 'auto';
-            }, 1000); // 1 second delay
-        });
-
-        // Check if coming back from menu.html to skip animation
-        if (sessionStorage.getItem('visitedMenu')) {
-            document.getElementById('loader').style.display = 'none';
-            document.body.style.overflow = 'auto';
-            sessionStorage.removeItem('visitedMenu');
-            
-            // Scroll to the section if hash exists
-            if (window.location.hash) {
-                const targetElement = document.querySelector(window.location.hash);
-                if (targetElement) {
-                    setTimeout(() => {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }, 100);
-                }
-            }
-        }
-
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const navMenu = document.getElementById('nav-menu');
@@ -1431,12 +1399,6 @@
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                
-                // Set flag when navigating to menu.html
-                if (link.getAttribute('href') === 'menu.html') {
-                    sessionStorage.setItem('visitedMenu', 'true');
-                    sessionStorage.setItem('scrollPosition', window.scrollY);
-                }
             });
         });
         
@@ -1454,260 +1416,44 @@
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('href') !== '#') {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Update URL without reload
-                        history.pushState(null, null, targetId);
-                    }
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
         
-        // Form submission with Web3Forms
+        // Form submission
         const bookingForm = document.getElementById('booking-form');
         
-        bookingForm.addEventListener('submit', async (e) => {
+        bookingForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            const formData = new FormData(bookingForm);
-            const submitBtn = bookingForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.textContent;
-            
-            try {
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Processing...';
-                
-                const response = await fetch(bookingForm.action, {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                const result = await response.json();
-                
-                if (result.success) {
-                    alert('Thank you for your reservation! We will contact you shortly to confirm your booking.');
-                    bookingForm.reset();
-                } else {
-                    alert('There was an error submitting your reservation. Please try again later.');
-                    console.error(result);
-                }
-            } catch (error) {
-                alert('There was an error submitting your reservation. Please try again later.');
-                console.error(error);
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalBtnText;
-            }
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show an alert
+            alert('Thank you for your reservation! We will contact you shortly to confirm your booking.');
+            bookingForm.reset();
         });
-
-        // Lazy load videos when they come into view
-        const lazyVideos = document.querySelectorAll('video[preload="none"]');
         
-        const lazyVideoObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const video = entry.target;
-                    video.preload = 'auto';
-                    lazyVideoObserver.unobserve(video);
-                }
-            });
-        }, { rootMargin: '200px' });
+        // Full menu toggle
+        const viewFullMenuBtn = document.getElementById('view-full-menu');
+        const fullMenuSection = document.getElementById('full-menu');
         
-        lazyVideos.forEach(video => {
-            lazyVideoObserver.observe(video);
-        });
-
-        // Restore scroll position if coming back from menu
-        if (sessionStorage.getItem('scrollPosition')) {
-            window.scrollTo(0, parseInt(sessionStorage.getItem('scrollPosition')));
-            sessionStorage.removeItem('scrollPosition');
-        }
-
-        // Chatbot Functionality
-        const chatbotToggle = document.getElementById('chatbot-toggle');
-        const chatbotWindow = document.getElementById('chatbot-window');
-        const chatbotClose = document.getElementById('chatbot-close');
-        const chatbotMessages = document.getElementById('chatbot-messages');
-        const chatbotInput = document.getElementById('chatbot-input');
-        const chatbotSend = document.getElementById('chatbot-send');
-
-        // Toggle chatbot window
-        chatbotToggle.addEventListener('click', () => {
-            chatbotWindow.classList.toggle('active');
-        });
-
-        // Close chatbot
-        chatbotClose.addEventListener('click', () => {
-            chatbotWindow.classList.remove('active');
-        });
-
-        // Send message function
-        function sendMessage() {
-            const message = chatbotInput.value.trim();
-            if (message) {
-                addMessage(message, 'user');
-                chatbotInput.value = '';
-                respondToMessage(message);
-            }
-        }
-
-        // Add message to chat
-        function addMessage(text, sender) {
-            const messageDiv = document.createElement('div');
-            messageDiv.classList.add('message');
-            messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
-            messageDiv.textContent = text;
-            chatbotMessages.appendChild(messageDiv);
-            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-        }
-
-        // Add quick replies
-        function addQuickReplies(replies) {
-            const quickRepliesDiv = document.createElement('div');
-            quickRepliesDiv.classList.add('quick-replies');
-            
-            replies.forEach(reply => {
-                const button = document.createElement('button');
-                button.classList.add('quick-reply');
-                button.textContent = reply.text;
-                button.dataset.message = reply.text;
-                button.addEventListener('click', () => {
-                    addMessage(reply.text, 'user');
-                    respondToMessage(reply.text);
-                });
-                quickRepliesDiv.appendChild(button);
+        viewFullMenuBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            fullMenuSection.classList.add('active');
+            window.scrollTo({
+                top: fullMenuSection.offsetTop - 80,
+                behavior: 'smooth'
             });
-            
-            const messageDiv = document.createElement('div');
-            messageDiv.classList.add('message');
-            messageDiv.classList.add('bot-message');
-            messageDiv.appendChild(quickRepliesDiv);
-            chatbotMessages.appendChild(messageDiv);
-            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-        }
-
-        // Add menu suggestion
-        function addMenuSuggestion(title, description) {
-            const suggestionDiv = document.createElement('div');
-            suggestionDiv.classList.add('menu-suggestion');
-            
-            const titleElement = document.createElement('h4');
-            titleElement.textContent = title;
-            
-            const descElement = document.createElement('p');
-            descElement.textContent = description;
-            
-            suggestionDiv.appendChild(titleElement);
-            suggestionDiv.appendChild(descElement);
-            
-            const messageDiv = document.createElement('div');
-            messageDiv.classList.add('message');
-            messageDiv.classList.add('bot-message');
-            messageDiv.appendChild(suggestionDiv);
-            chatbotMessages.appendChild(messageDiv);
-            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-        }
-
-        // Bot responses
-        function respondToMessage(message) {
-            // Simulate typing delay
-            setTimeout(() => {
-                const lowerMessage = message.toLowerCase();
-                
-                if (lowerMessage.includes('reserve') || lowerMessage.includes('table') || lowerMessage.includes('booking')) {
-                    addMessage('To reserve a table, please provide the following details:', 'bot');
-                    addMessage('1. Date and time of reservation\n2. Number of guests\n3. Your name\n4. Contact number', 'bot');
-                    addQuickReplies([
-                        { text: 'Today dinner' },
-                        { text: 'Tomorrow lunch' },
-                        { text: 'Weekend booking' }
-                    ]);
-                } 
-                else if (lowerMessage.includes('menu') || lowerMessage.includes('food') || lowerMessage.includes('dish')) {
-                    addMessage('We offer a wide variety of authentic Indian dishes. What type of cuisine are you interested in?', 'bot');
-                    addQuickReplies([
-                        { text: 'North Indian' },
-                        { text: 'South Indian' },
-                        { text: 'Vegetarian' },
-                        { text: 'Non-vegetarian' }
-                    ]);
-                }
-                else if (lowerMessage.includes('north indian')) {
-                    addMessage('Our North Indian specialties include:', 'bot');
-                    addMenuSuggestion('Butter Chicken', 'Tender chicken in rich tomato and butter sauce');
-                    addMenuSuggestion('Dal Makhani', 'Creamy black lentils slow-cooked to perfection');
-                    addMenuSuggestion('Paneer Tikka', 'Grilled cottage cheese with spices');
-                    addQuickReplies([
-                        { text: 'View full menu' },
-                        { text: 'Make reservation' }
-                    ]);
-                }
-                else if (lowerMessage.includes('south indian')) {
-                    addMessage('Our South Indian specialties include:', 'bot');
-                    addMenuSuggestion('Dosa', 'Crispy rice and lentil crepe');
-                    addMenuSuggestion('Idli Sambar', 'Steamed rice cakes with lentil stew');
-                    addMenuSuggestion('Hyderabadi Biryani', 'Fragrant rice with meat and spices');
-                    addQuickReplies([
-                        { text: 'View full menu' },
-                        { text: 'Make reservation' }
-                    ]);
-                }
-                else if (lowerMessage.includes('contact') || lowerMessage.includes('phone') || lowerMessage.includes('email')) {
-                    addMessage('You can reach us through:', 'bot');
-                    addMessage('Phone: 9021078335 or 9665615666\nEmail: info@gpshighwayrestaurant.com\nAddress: GPS Highway Restaurant, Chichbhawan, Nagpur, Maharashtra 440005', 'bot');
-                    addQuickReplies([
-                        { text: 'Reserve a table' },
-                        { text: 'View menu' }
-                    ]);
-                }
-                else if (lowerMessage.includes('hours') || lowerMessage.includes('open') || lowerMessage.includes('time')) {
-                    addMessage('We are open every day from 10:00 AM to 10:00 PM.', 'bot');
-                    addQuickReplies([
-                        { text: 'Reserve a table' },
-                        { text: 'View menu' }
-                    ]);
-                }
-                else if (lowerMessage.includes('today') || lowerMessage.includes('dinner') || lowerMessage.includes('lunch')) {
-                    addMessage('I can help you reserve a table for today. How many people will be dining?', 'bot');
-                    addQuickReplies([
-                        { text: '2 people' },
-                        { text: '4 people' },
-                        { text: '6+ people' }
-                    ]);
-                }
-                else if (lowerMessage.includes('tomorrow')) {
-                    addMessage('I can help you reserve a table for tomorrow. What time would you like to dine?', 'bot');
-                    addQuickReplies([
-                        { text: '12 PM lunch' },
-                        { text: '7 PM dinner' },
-                        { text: 'Other time' }
-                    ]);
-                }
-                else if (lowerMessage.includes('weekend')) {
-                    addMessage('Weekend reservations are popular. Would you like to book for Saturday or Sunday?', 'bot');
-                    addQuickReplies([
-                        { text: 'Saturday' },
-                        { text: 'Sunday' }
-                    ]);
-                }
-                else if (lowerMessage.includes('2') || lowerMessage.includes('two') || lowerMessage.includes('couple')) {
-                    addMessage('Table for 2 reserved! Please provide your name and contact number to confirm.', 'bot');
-                }
-                else if (lowerMessage.includes('4') || lowerMessage.includes('four') || lowerMessage.includes('family')) {
-                    addMessage('Table for 4 reserved! Please provide your name and contact number to confirm.', 'bot');
-                }
-                else if (lowerMessage.includes('6') || lowerMessage.includes('six') || lowerMessage.includes('group')) {
-                    addMessage('For groups of 6 or more, please call us directly at 9021078335 to make arrangements.', 'bot');
-                }
-                else if (lowerMessage.includes('12') || lowerMessage.includes('noon') || lowerMessage.includes('lunch')) {
-                    addMessage('Lunch reservation at 12 PM confirmed! P
+        });
+    </script>
+</body>
+</html>
